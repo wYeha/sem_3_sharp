@@ -27,4 +27,4 @@ Get_coord(a_coord);
 Console.WriteLine("Введи координаты точки B в 3D пространстве через Enter:");
 Get_coord(b_coord);
 
-Console.WriteLine($"Рсстояние между точками А и В = {Get_distance(a_coord, b_coord)}");
+Console.WriteLine($"Расстояние между точками А и В = {Get_distance(a_coord, b_coord)}");
