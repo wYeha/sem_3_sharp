@@ -1,71 +1,27 @@
-﻿// void M()
-// {
-//     Console.WriteLine("...");
-// }
+﻿// Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
+// Выполнить с помощью числовых операций (целочисленное деление, остаток от деления).
+// 14212 -> нет
+// 12821 -> да
+// 23432 -> да
 
-// M();
+Console.Write("Введи пятизначное число:");
+int number = Convert.ToInt32(Console.ReadLine());
 
-// void M2(string s)
-// {
-//     Console.WriteLine(s);
-// }
-
-// M2("...");
-
-// void M21(string s, int count)
-// {
-//     int i = 0;
-//     while (i<count){
-//         Console.WriteLine(s);
-//         i++;
-//     }  
-// }
-
-
-// M21(count: 4, s: "TTT");
-
-// int Method()
-// {
-//     return DateTime.Now.Year;
-// }
-
-// int year = Method();
-// Console.WriteLine(year);
-
-
-// string M4(int count, string c)
-// {
-//     string result = String.Empty;
-//     for (int i = 0; i< count; i++)
-//     {
-//         result += c;
-//     }
-
-//     return result;
-// }
-
-// string s = M4(c: "zvwe", count: 2);
-// Console.WriteLine(s);
-
-
-string text = "kkk KKK CCC ccc";
-
-string Replace(string text, char Old, char New)
+void IfPol(int number_f)
 {
-    string result = String.Empty;
-
-    int length = text.Length;
-    for (int i = 0; i < length; i++)
+    if (10000 <= number_f && number_f < 100000)
     {
-        if(text[i]==Old) result += New;
-        else result += text[i];
-    }
+        int start_number, summ = 0, cutted_number;
+        for (start_number = number_f; number_f != 0; number_f /= 10)
+        {
+            cutted_number = number_f % 10;
+            summ = summ * 10 + cutted_number;
+        }
+        if (start_number == summ) Console.WriteLine($"{start_number} - палиндром");
+        else Console.WriteLine($"{start_number} - не палиндром!");
 
-    return result;
+    }
+    else Console.Write("Пя ти знач но е!!");
 }
 
-string new_text = Replace(text, 'k', 'K');
-Console.WriteLine();
-Console.WriteLine(new_text);
-new_text = Replace(new_text, 'c', 'C');
-Console.WriteLine(new_text);
+IfPol(number);
